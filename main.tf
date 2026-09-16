@@ -5,7 +5,7 @@ resource "aws_vpc" "main" {
 
   tags = {
     Name = "dev-main-vpc"
-    Type = "aws-vpc"
+    Environment = "dev"
   }
 }
 
@@ -15,6 +15,7 @@ resource "aws_subnet" "private" {
   availability_zone = var.private_subnet_az
   tags = {
     Name = "main-subnet"
+    Environment = "dev"
   }
 }
 
@@ -24,5 +25,6 @@ resource "aws_subnet" "public" {
   availability_zone = var.public_subnet_az
   tags = {
     Name = "public-subnet"
+    Environment = "dev"
   }
 }
